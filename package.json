@@ -8,7 +8,9 @@
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "test": "jest --watch"
+    "qa": "npm run lint && npm run test test:ci",
+    "test": "jest --watch",
+    "test:ci": "jest"
   },
   "dependencies": {
     "@next/font": "13.1.2",
