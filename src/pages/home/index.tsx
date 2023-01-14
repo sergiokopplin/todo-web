@@ -1,3 +1,7 @@
-export default function Home() {
-  return <div>Home</div>;
-}
+import { makeHomePage } from "@/main/factories/pages";
+
+const HomeIndex = () => {
+  return makeHomePage();
+};
+
+export default HomeIndex;
