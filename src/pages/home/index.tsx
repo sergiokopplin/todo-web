@@ -1,8 +1,16 @@
-const HomeIndex = ({ data }: { data: any }) => {
+interface HomeData {
+  data: {
+    id: string;
+    text: string;
+    workspacesId: string;
+  }[];
+}
+
+const HomeIndex = ({ data }: HomeData) => {
   return (
     <div>
       {data.map((item) => (
-        <div>
+        <div key={item.id}>
           {item.id} = {item.text} / {item.workspacesId}
         </div>
       ))}

@@ -9,7 +9,7 @@
     "cypress": "cypress open",
     "dev": "next dev",
     "lint": "next lint",
-    "qa": "npm run lint && npm run test test:ci",
+    "qa": "npm run lint && npm run test:ci",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
     "test:ci": "jest",
