@@ -1,9 +1,21 @@
-export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
-    },
-  },
-}
+import { ConfigProvider } from "antd";
+
+import "../src/styles/reset.css";
+
+export const parameters = {};
+
+export const decorators = [
+  (Story) => (
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: "#F41D12",
+          fontFamily:
+            "Inter,Helvetica Neue,Helvetica,-apple-system,system-ui,sans-serif",
+        },
+      }}
+    >
+      <Story />
+    </ConfigProvider>
+  ),
+];
