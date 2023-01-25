@@ -10,6 +10,8 @@ export const decorators = [
       theme={{
         token: {
           colorPrimary: "#F41D12",
+          colorTextBase: "#000",
+          colorTextSecondary: "#C9C9C9",
           fontFamily:
             "Inter,Helvetica Neue,Helvetica,-apple-system,system-ui,sans-serif",
         },

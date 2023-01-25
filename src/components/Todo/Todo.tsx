@@ -1,6 +1,6 @@
 import { Typography, theme } from "antd";
+import { Heading, Text } from "@/components";
 
-const { Title } = Typography;
 const { useToken } = theme;
 
 export const Todo = () => {
@@ -8,38 +8,26 @@ export const Todo = () => {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <Title
-        level={2}
-        style={{
-          color: token.colorPrimary,
-          textTransform: "uppercase",
-          fontFamily: "Pathway Gothic One, sans-serif",
-          fontSize: 32,
-        }}
-      >
-        Terça Feira
-      </Title>
+      <Heading>Terça-Feira</Heading>
+      <Heading color="active">Terça-Feira</Heading>
+      <Heading color="inactive">Terça-Feira</Heading>
 
-      <Typography
-        style={{
-          color: token.colorPrimary,
-          textTransform: "uppercase",
-          fontSize: 12,
-        }}
-      >
+      <Text uppercase>24 de Janeiro de 2023</Text>
+      <Text color="active" uppercase>
         24 de Janeiro de 2023
-      </Typography>
+      </Text>
+      <Text color="inactive" uppercase>
+        24 de Janeiro de 2023
+      </Text>
 
       <div>
         <ul style={{ listStyle: "none" }}>
           <li>
-            <Typography style={{ color: token.colorPrimary }}>
-              tudo bem
-            </Typography>
+            <Text>tudo bem</Text>
           </li>
 
           <li>
-            <Typography style={{ color: token.colorPrimary }}>uhull</Typography>
+            <Text>uhull</Text>
           </li>
         </ul>
       </div>
