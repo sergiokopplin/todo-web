@@ -16,3 +16,17 @@ export const Default = Template.bind({});
 Default.args = {
   children: "QUARTA-FEIRA",
 };
+
+export const Active = Template.bind({});
+
+Active.args = {
+  children: "QUARTA-FEIRA",
+  color: "active",
+};
+
+export const Inactive = Template.bind({});
+
+Inactive.args = {
+  children: "QUARTA-FEIRA",
+  color: "inactive",
+};

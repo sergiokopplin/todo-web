@@ -14,3 +14,24 @@ export const Default = Template.bind({});
 Default.args = {
   children: "Text Component",
 };
+
+export const Active = Template.bind({});
+
+Active.args = {
+  ...Default.args,
+  color: "active",
+};
+
+export const Inactive = Template.bind({});
+
+Inactive.args = {
+  ...Default.args,
+  color: "inactive",
+};
+
+export const Uppercase = Template.bind({});
+
+Uppercase.args = {
+  ...Default.args,
+  uppercase: true,
+};
