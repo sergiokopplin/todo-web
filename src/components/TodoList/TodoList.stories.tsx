@@ -11,9 +11,9 @@ const Template: ComponentStory<typeof TodoList> = (args) => (
   <TodoList {...args} />
 );
 
-export const Primary = Template.bind({});
+export const Default = Template.bind({});
 
-Primary.args = {
+Default.args = {
   title: "QUARTA-FEIRA",
   date: "24 de Janeiro de 2023",
   todos: [

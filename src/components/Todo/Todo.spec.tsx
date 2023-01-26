@@ -1,13 +1,13 @@
-import { Text } from "./Text";
+import { Todo } from "./Todo";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import React from "react";
 
-describe("Text", () => {
+describe("Todo", () => {
   it("renders a Text", async () => {
-    render(<Text>Text</Text>);
+    render(<Todo text="First Todo" />);
 
-    const result = await screen.findByText("Text");
+    const result = await screen.findByText("First Todo");
 
     expect(result).toBeTruthy();
   });

@@ -35,3 +35,10 @@ Uppercase.args = {
   ...Default.args,
   uppercase: true,
 };
+
+export const LineThrough = Template.bind({});
+
+LineThrough.args = {
+  ...Default.args,
+  lineThrough: true,
+};

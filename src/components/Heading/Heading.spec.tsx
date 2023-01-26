@@ -1,6 +1,7 @@
 import { Heading } from "./Heading";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
+import React from "react";
 
 describe("Heading", () => {
   it("renders a Text", async () => {
