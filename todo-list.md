@@ -1,10 +1,5 @@
 # Todo List
 
-<!-- CHORE -->
-
-- [ ] Adicionar o Cypress
-- [ ] Adicionar o Coverage 100% no jest
-
 <!-- FEATURES HOME -->
 
 - [ ] Home Page listando os dados de um worskspace e seus todos
