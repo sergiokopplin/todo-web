@@ -17,7 +17,7 @@ Default.args = {
   title: "QUARTA-FEIRA",
   date: "24 de Janeiro de 2023",
   todos: [
-    { id: "1234", text: "First Todo" },
-    { id: "4321", text: "Second Todo" },
+    { id: "1234", text: "First Todo", completed: false },
+    { id: "4321", text: "Second Todo", completed: true },
   ],
 };

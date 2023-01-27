@@ -23,10 +23,12 @@ describe("TodoList", () => {
           {
             id: "1234",
             text: "First Todo",
+            completed: true,
           },
           {
             id: "4321",
             text: "Second Todo",
+            completed: false,
           },
         ]}
       />

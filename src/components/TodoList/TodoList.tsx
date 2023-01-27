@@ -1,4 +1,4 @@
-import { Heading, Text } from "@/components";
+import { Heading, Text, Todo } from "@/components";
 
 type Props = {
   title: string;
@@ -6,24 +6,23 @@ type Props = {
   todos: {
     id: string;
     text: string;
+    completed: boolean;
   }[];
 };
 
 export const TodoList = ({ title, date, todos }: Props) => {
   return (
-    <div style={{ textAlign: "center" }}>
+    <div>
       <Heading>{title}</Heading>
       <Text uppercase>{date}</Text>
 
-      <div>
-        <ul style={{ listStyle: "none" }}>
-          {todos.map((todo) => (
-            <li key={todo.id}>
-              <Text>{todo.text}</Text>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            <Todo text={todo.text} completed={todo.completed} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
