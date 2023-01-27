@@ -6,6 +6,14 @@ export const StyledText = styled("p", {
   fontFamily: "$fontsBase",
 
   variants: {
+    size: {
+      s: {
+        fontSize: "$fontSizeS",
+      },
+      m: {
+        fontSize: "$fontSizeM",
+      },
+    },
     color: {
       default: {
         color: "$colorTextBase",
@@ -39,6 +47,7 @@ export const StyledText = styled("p", {
     color: "$colorTextBase",
     uppercase: false,
     lineThrough: false,
+    size: "m",
   },
 });
 

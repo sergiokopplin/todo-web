@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Text } from "./Text";
-import { TextColorMock } from "./Text.mock";
+import { TextColorMock, TextSizeMock } from "./Text.mock";
 
 export default {
   title: "Components/Text",
@@ -9,6 +9,10 @@ export default {
   argTypes: {
     color: {
       options: TextColorMock,
+      control: "select",
+    },
+    size: {
+      options: TextSizeMock,
       control: "select",
     },
     lineThrough: {
@@ -29,6 +33,7 @@ Default.args = {
   color: "default",
   lineThrough: false,
   uppercase: false,
+  size: "m",
 };
 
 export const Active = Template.bind({});
@@ -57,4 +62,11 @@ export const LineThrough = Template.bind({});
 LineThrough.args = {
   ...Default.args,
   lineThrough: true,
+};
+
+export const Small = Template.bind({});
+
+Small.args = {
+  ...Default.args,
+  size: "s",
 };

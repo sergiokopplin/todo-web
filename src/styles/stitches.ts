@@ -18,6 +18,7 @@ export const {
     },
     space: {},
     fontSizes: {
+      fontSizeS: "12px",
       fontSizeM: "14px",
       fontSizeL: "32px",
     },

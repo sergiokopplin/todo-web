@@ -14,7 +14,9 @@ export const TodoList = ({ title, date, todos }: Props) => {
   return (
     <div>
       <Heading>{title}</Heading>
-      <Text uppercase>{date}</Text>
+      <Text uppercase size="s">
+        {date}
+      </Text>
 
       <ul>
         {todos.map((todo) => (

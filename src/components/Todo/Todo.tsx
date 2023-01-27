@@ -3,7 +3,7 @@ import { Text } from "@/components";
 type Props = {
   text: string;
   completed: boolean;
-  theme: "default" | "variant";
+  theme?: "default" | "variant";
 };
 
 export const Todo = ({ text, completed, theme = "default" }: Props) => {

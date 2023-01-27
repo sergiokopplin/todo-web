@@ -5,6 +5,7 @@ type Props = {
   color?: StyledTextVariants["color"];
   uppercase?: StyledTextVariants["uppercase"];
   lineThrough?: StyledTextVariants["lineThrough"];
+  size?: StyledTextVariants["size"];
 };
 
 export const Text = ({
@@ -12,9 +13,15 @@ export const Text = ({
   color = "default",
   uppercase = false,
   lineThrough = false,
+  size = "m",
 }: Props) => {
   return (
-    <StyledText color={color} uppercase={uppercase} lineThrough={lineThrough}>
+    <StyledText
+      color={color}
+      uppercase={uppercase}
+      lineThrough={lineThrough}
+      size={size}
+    >
       {children}
     </StyledText>
   );
