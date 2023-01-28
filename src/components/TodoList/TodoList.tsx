@@ -1,4 +1,11 @@
-import { Heading, Text, Todo } from "@/components";
+import { Heading, Todo } from "@/components";
+
+import {
+  StyledWrapper,
+  StyledHeader,
+  StyledText,
+  StyledItem,
+} from "./TodoList.styles";
 
 type Props = {
   title: string;
@@ -12,19 +19,21 @@ type Props = {
 
 export const TodoList = ({ title, date, todos }: Props) => {
   return (
-    <div>
-      <Heading>{title}</Heading>
-      <Text uppercase size="s">
-        {date}
-      </Text>
+    <StyledWrapper>
+      <StyledHeader>
+        <Heading>{title}</Heading>
+        <StyledText uppercase size="s">
+          {date}
+        </StyledText>
+      </StyledHeader>
 
       <ul>
         {todos.map((todo) => (
-          <li key={todo.id}>
+          <StyledItem key={todo.id}>
             <Todo completed={todo.completed}>{todo.text}</Todo>
-          </li>
+          </StyledItem>
         ))}
       </ul>
-    </div>
+    </StyledWrapper>
   );
 };
