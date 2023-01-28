@@ -14,6 +14,7 @@ export const Text = ({
   uppercase = false,
   lineThrough = false,
   size = "m",
+  ...rest
 }: Props) => {
   return (
     <StyledText
@@ -21,6 +22,7 @@ export const Text = ({
       uppercase={uppercase}
       lineThrough={lineThrough}
       size={size}
+      {...rest}
     >
       {children}
     </StyledText>
