@@ -5,16 +5,49 @@ export const StyledWrapper = styled("div", {
 
   variants: {
     hovered: {
-      true: {
-        backgroundColor: "$todoHover",
-      },
       false: {
+        backgroundColor: "$todoActive",
+      },
+    },
+    theme: {
+      initial: {
+        backgroundColor: "$todoActive",
+      },
+      active: {
+        backgroundColor: "$todoActive",
+      },
+      inactive: {
         backgroundColor: "$todoActive",
       },
     },
   },
 
+  compoundVariants: [
+    {
+      hovered: true,
+      theme: "inactive",
+      css: {
+        backgroundColor: "$todoInactive",
+      },
+    },
+    {
+      hovered: true,
+      theme: "active",
+      css: {
+        backgroundColor: "$todoHover",
+      },
+    },
+    {
+      hovered: true,
+      theme: "initial",
+      css: {
+        backgroundColor: "$todoHover",
+      },
+    },
+  ],
+
   defaultVariants: {
+    theme: "initial",
     hovered: false,
   },
 });

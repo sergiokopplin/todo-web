@@ -16,8 +16,26 @@ export default {
   },
 } as Meta<typeof TodoList>;
 
-export const initial: StoryFn<typeof TodoList> = (args) => (
+const Wrapper = (props: { children: JSX.Element }) => (
   <div style={{ width: 250, border: "1px solid rgba(0, 0, 0, 0.08)" }}>
-    <TodoList {...args} />
+    {props.children}
   </div>
+);
+
+export const initial: StoryFn<typeof TodoList> = (args) => (
+  <Wrapper>
+    <TodoList {...args} />
+  </Wrapper>
+);
+
+export const active: StoryFn<typeof TodoList> = (args) => (
+  <Wrapper>
+    <TodoList {...args} theme="active" />
+  </Wrapper>
+);
+
+export const inactive: StoryFn<typeof TodoList> = (args) => (
+  <Wrapper>
+    <TodoList {...args} theme="inactive" />
+  </Wrapper>
 );

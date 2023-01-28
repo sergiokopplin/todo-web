@@ -6,24 +6,22 @@ import { StyledWrapper } from "./Todo.styles";
 type Props = {
   children: string;
   completed?: boolean;
-  theme?: "default" | "variant";
+  theme?: "initial" | "active" | "inactive";
 };
 
 export const Todo = ({
   children,
   completed = false,
-  theme = "default",
+  theme = "initial",
 }: Props) => {
   const [hovered, setHovered] = useState(false);
 
   const getColor = () => {
-    if (hovered) return "default";
+    if (hovered) return "initial";
 
-    if (theme === "default") {
-      return completed ? "inactive" : "default";
-    }
+    if (completed) return "inactive";
 
-    return completed ? "inactive" : "active";
+    return theme;
   };
 
   return (
@@ -32,6 +30,7 @@ export const Todo = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       hovered={hovered}
+      theme={theme}
     >
       <Text color={getColor()} lineThrough={completed}>
         {children}

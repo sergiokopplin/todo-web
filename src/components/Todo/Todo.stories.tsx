@@ -20,14 +20,26 @@ export const initial: StoryFn<typeof Todo> = (args) => (
   </Wrapper>
 );
 
-export const variant: StoryFn<typeof Todo> = (args) => (
+export const active: StoryFn<typeof Todo> = (args) => (
   <Wrapper>
-    <Todo {...args} theme="variant" />
+    <Todo {...args} theme="active" />
+  </Wrapper>
+);
+
+export const inactive: StoryFn<typeof Todo> = (args) => (
+  <Wrapper>
+    <Todo {...args} theme="inactive" />
   </Wrapper>
 );
 
 export const completed: StoryFn<typeof Todo> = (args) => (
   <Wrapper>
     <Todo {...args} completed />
+  </Wrapper>
+);
+
+export const completedAndInactive: StoryFn<typeof Todo> = (args) => (
+  <Wrapper>
+    <Todo {...args} completed theme="inactive" />
   </Wrapper>
 );

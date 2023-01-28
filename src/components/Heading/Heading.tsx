@@ -2,9 +2,9 @@ import { StyledHeading } from "./Heading.styles";
 
 type Props = {
   children: string;
-  color?: "default" | "active" | "inactive";
+  color?: "initial" | "active" | "inactive";
 };
 
-export const Heading = ({ children, color = "default" }: Props) => {
+export const Heading = ({ children, color = "initial" }: Props) => {
   return <StyledHeading color={color}>{children}</StyledHeading>;
 };

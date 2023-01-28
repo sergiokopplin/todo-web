@@ -14,7 +14,7 @@ export const StyledText = styled("p", {
       },
     },
     color: {
-      default: {
+      initial: {
         color: "$colorTextBase",
       },
       active: {

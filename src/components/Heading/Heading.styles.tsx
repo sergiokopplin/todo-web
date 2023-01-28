@@ -7,7 +7,7 @@ export const StyledHeading = styled("h2", {
 
   variants: {
     color: {
-      default: {
+      initial: {
         color: "$colorTextBase",
       },
       active: {

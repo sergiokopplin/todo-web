@@ -2,7 +2,7 @@ import { StyledText } from "./Text.styles";
 
 type Props = {
   children: string;
-  color?: "default" | "active" | "inactive";
+  color?: "initial" | "active" | "inactive";
   uppercase?: boolean;
   lineThrough?: boolean;
   size?: "m" | "s";
@@ -10,7 +10,7 @@ type Props = {
 
 export const Text = ({
   children,
-  color = "default",
+  color = "initial",
   uppercase = false,
   lineThrough = false,
   size = "m",

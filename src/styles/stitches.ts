@@ -17,6 +17,7 @@ export const {
       colorTextSecondary: "#C9C9C9",
       todoHover: "#fedede",
       todoActive: "transparent",
+      todoInactive: "#f8f8f8",
     },
     space: {},
     fontSizes: {

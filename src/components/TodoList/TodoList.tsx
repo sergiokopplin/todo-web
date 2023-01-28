@@ -7,7 +7,10 @@ import {
   StyledItem,
 } from "./TodoList.styles";
 
+type Theme = "initial" | "active" | "inactive";
+
 type Props = {
+  theme?: Theme;
   title: string;
   date: string;
   todos: {
@@ -17,12 +20,12 @@ type Props = {
   }[];
 };
 
-export const TodoList = ({ title, date, todos }: Props) => {
+export const TodoList = ({ title, date, todos, theme = "initial" }: Props) => {
   return (
     <StyledWrapper>
       <StyledHeader>
-        <Heading>{title}</Heading>
-        <StyledText uppercase size="s">
+        <Heading color={theme}>{title}</Heading>
+        <StyledText uppercase size="s" color={theme}>
           {date}
         </StyledText>
       </StyledHeader>
@@ -30,7 +33,9 @@ export const TodoList = ({ title, date, todos }: Props) => {
       <ul>
         {todos.map((todo) => (
           <StyledItem key={todo.id}>
-            <Todo completed={todo.completed}>{todo.text}</Todo>
+            <Todo completed={todo.completed} theme={theme}>
+              {todo.text}
+            </Todo>
           </StyledItem>
         ))}
       </ul>
