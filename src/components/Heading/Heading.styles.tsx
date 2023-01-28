@@ -1,4 +1,3 @@
-import type * as Stitches from "@stitches/react";
 import { styled } from "@/styles/stitches";
 
 export const StyledHeading = styled("h2", {
@@ -24,5 +23,3 @@ export const StyledHeading = styled("h2", {
     color: "$colorTextBase",
   },
 });
-
-export type StyledHeadingVariants = Stitches.VariantProps<typeof StyledHeading>;

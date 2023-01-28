@@ -21,7 +21,7 @@ export const TodoList = ({ title, date, todos }: Props) => {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
-            <Todo text={todo.text} completed={todo.completed} />
+            <Todo completed={todo.completed}>{todo.text}</Todo>
           </li>
         ))}
       </ul>

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build-storybook": "build-storybook",
+    "build-storybook": "storybook build",
     "build": "next build",
     "check": "ncu --interactive",
     "chromatic": "npx chromatic --project-token=e56b64041178",
@@ -13,7 +13,7 @@
     "lint": "next lint",
     "qa": "npm run lint && npm run test:ci",
     "start": "next start",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "storybook dev -p 6006",
     "test:ci": "jest",
     "test": "jest --watch"
   },
@@ -27,14 +27,13 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
-    "@storybook/addon-actions": "^6.5.16",
-    "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-interactions": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16",
-    "@storybook/builder-webpack5": "^6.5.16",
-    "@storybook/manager-webpack5": "^6.5.16",
-    "@storybook/react": "^6.5.16",
-    "@storybook/testing-library": "^0.0.13",
+    "@storybook/addon-actions": "^7.0.0-beta.35",
+    "@storybook/addon-essentials": "^7.0.0-beta.35",
+    "@storybook/addon-interactions": "^7.0.0-beta.35",
+    "@storybook/addon-links": "^7.0.0-beta.35",
+    "@storybook/nextjs": "^7.0.0-beta.35",
+    "@storybook/react": "^7.0.0-beta.35",
+    "@storybook/testing-library": "^0.0.14-next.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "14.4.3",
@@ -56,8 +55,10 @@
     "lint-staged": "^13.1.0",
     "npm-check-updates": "^16.6.3",
     "start-server-and-test": "^1.15.3",
+    "storybook": "^7.0.0-beta.35",
     "tsconfig-paths-webpack-plugin": "^4.0.0",
-    "typescript": "4.9.4"
+    "typescript": "4.9.4",
+    "util": "^0.12.5"
   },
   "lint-staged": {
     "*.ts": [

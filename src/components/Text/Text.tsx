@@ -1,11 +1,11 @@
-import { StyledText, StyledTextVariants } from "./Text.styles";
+import { StyledText } from "./Text.styles";
 
 type Props = {
   children: string;
-  color?: StyledTextVariants["color"];
-  uppercase?: StyledTextVariants["uppercase"];
-  lineThrough?: StyledTextVariants["lineThrough"];
-  size?: StyledTextVariants["size"];
+  color?: "default" | "active" | "inactive";
+  uppercase?: boolean;
+  lineThrough?: boolean;
+  size?: "m" | "s";
 };
 
 export const Text = ({

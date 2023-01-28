@@ -1,12 +1,16 @@
 import { Text } from "@/components";
 
 type Props = {
-  text: string;
-  completed: boolean;
+  children: string;
+  completed?: boolean;
   theme?: "default" | "variant";
 };
 
-export const Todo = ({ text, completed, theme = "default" }: Props) => {
+export const Todo = ({
+  children,
+  completed = false,
+  theme = "default",
+}: Props) => {
   const getColor = () => {
     if (theme === "default") {
       return completed ? "inactive" : "default";
@@ -17,7 +21,7 @@ export const Todo = ({ text, completed, theme = "default" }: Props) => {
 
   return (
     <Text color={getColor()} lineThrough={completed}>
-      {text}
+      {children}
     </Text>
   );
 };

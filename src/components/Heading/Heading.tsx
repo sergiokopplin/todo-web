@@ -1,8 +1,8 @@
-import { StyledHeading, StyledHeadingVariants } from "./Heading.styles";
+import { StyledHeading } from "./Heading.styles";
 
 type Props = {
   children: string;
-  color?: StyledHeadingVariants["color"];
+  color?: "default" | "active" | "inactive";
 };
 
 export const Heading = ({ children, color = "default" }: Props) => {

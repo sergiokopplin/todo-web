@@ -5,7 +5,7 @@ import React from "react";
 
 describe("Todo", () => {
   it("renders a Text", async () => {
-    render(<Todo text="First Todo" />);
+    render(<Todo completed={false}>First Todo</Todo>);
 
     const result = await screen.findByText("First Todo");
 

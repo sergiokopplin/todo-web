@@ -1,4 +1,3 @@
-import type * as Stitches from "@stitches/react";
 import { styled } from "@/styles/stitches";
 
 export const StyledText = styled("p", {
@@ -50,5 +49,3 @@ export const StyledText = styled("p", {
     size: "m",
   },
 });
-
-export type StyledTextVariants = Stitches.VariantProps<typeof StyledText>;

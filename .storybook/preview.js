@@ -1,6 +1,17 @@
 import { resetStyles, globalStyles, globalCss } from "../src/styles";
 
-export const parameters = {};
+export const parameters = {
+  layout: "centered",
+  backgrounds: {
+    default: "white",
+    values: [
+      {
+        name: "white",
+        value: "#fff",
+      },
+    ],
+  },
+};
 
 export const allStyles = globalCss({
   ...resetStyles,
