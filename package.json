@@ -7,6 +7,7 @@
     "build": "next build",
     "check": "ncu --interactive",
     "chromatic": "npx chromatic --project-token=e56b64041178",
+    "cypress": "cypress open",
     "deploy:storybook": "npm run chromatic",
     "dev": "next dev",
     "lint:fix": "next lint --fix",

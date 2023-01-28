@@ -10,12 +10,24 @@ export default {
   },
 } as Meta<typeof Todo>;
 
-export const initial: StoryFn<typeof Todo> = (args) => <Todo {...args} />;
+const Wrapper = (props: { children: JSX.Element }) => (
+  <div style={{ width: 250 }}>{props.children}</div>
+);
+
+export const initial: StoryFn<typeof Todo> = (args) => (
+  <Wrapper>
+    <Todo {...args} />
+  </Wrapper>
+);
 
 export const variant: StoryFn<typeof Todo> = (args) => (
-  <Todo {...args} theme="variant" />
+  <Wrapper>
+    <Todo {...args} theme="variant" />
+  </Wrapper>
 );
 
 export const completed: StoryFn<typeof Todo> = (args) => (
-  <Todo {...args} completed />
+  <Wrapper>
+    <Todo {...args} completed />
+  </Wrapper>
 );

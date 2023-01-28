@@ -15,6 +15,8 @@ export const {
       colorTextBase: "#000",
       colorTextPrimary: "#F41D12",
       colorTextSecondary: "#C9C9C9",
+      todoHover: "#fedede",
+      todoActive: "transparent",
     },
     space: {},
     fontSizes: {
