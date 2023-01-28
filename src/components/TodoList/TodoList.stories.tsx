@@ -15,6 +15,6 @@ export default {
   },
 } as Meta<typeof TodoList>;
 
-export const Default: StoryFn<typeof TodoList> = (args) => (
+export const initial: StoryFn<typeof TodoList> = (args) => (
   <TodoList {...args} />
 );

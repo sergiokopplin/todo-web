@@ -10,4 +10,12 @@ export default {
   },
 } as Meta<typeof Heading>;
 
-export const Default: StoryFn<typeof Heading> = (args) => <Heading {...args} />;
+export const initial: StoryFn<typeof Heading> = (args) => <Heading {...args} />;
+
+export const active: StoryFn<typeof Heading> = (args) => (
+  <Heading color="active" {...args} />
+);
+
+export const inactive: StoryFn<typeof Heading> = (args) => (
+  <Heading color="inactive" {...args} />
+);

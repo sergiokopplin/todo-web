@@ -10,4 +10,12 @@ export default {
   },
 } as Meta<typeof Todo>;
 
-export const Default: StoryFn<typeof Todo> = (args) => <Todo {...args} />;
+export const initial: StoryFn<typeof Todo> = (args) => <Todo {...args} />;
+
+export const variant: StoryFn<typeof Todo> = (args) => (
+  <Todo {...args} theme="variant" />
+);
+
+export const completed: StoryFn<typeof Todo> = (args) => (
+  <Todo {...args} completed />
+);
