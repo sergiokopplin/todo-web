@@ -1,5 +1,7 @@
 # Todo List
 
+- [ ] Cypress Typing conflict
+
 <!-- FEATURES HOME -->
 
 - [ ] Home Page listando os dados de um worskspace e seus todos
