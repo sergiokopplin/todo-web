@@ -17,10 +17,16 @@ type Props = {
     id: string;
     text: string;
     completed: boolean;
+    position: number;
   }[];
 };
 
 export const TodoList = ({ title, date, todos, theme = "initial" }: Props) => {
+  const sorted = todos.sort(
+    (a, b) =>
+      Number(a.completed) - Number(b.completed) || a.position - b.position
+  );
+
   return (
     <StyledWrapper>
       <StyledHeader>
@@ -31,7 +37,7 @@ export const TodoList = ({ title, date, todos, theme = "initial" }: Props) => {
       </StyledHeader>
 
       <ul>
-        {todos.map((todo) => (
+        {sorted.map((todo) => (
           <StyledItem key={todo.id}>
             <Todo completed={todo.completed} theme={theme}>
               {todo.text}

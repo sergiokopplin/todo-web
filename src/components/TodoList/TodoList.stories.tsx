@@ -9,9 +9,12 @@ export default {
     title: "QUARTA-FEIRA",
     date: "24 de Janeiro de 2023",
     todos: [
-      { id: "1234", text: "First Todo", completed: false },
-      { id: "4321", text: "Second Todo", completed: false },
-      { id: "2134", text: "Third Todo", completed: true },
+      { id: "45234", text: "Todo Todo", completed: true, position: 5 },
+      { id: "64536", text: "Another One", completed: false, position: 1 },
+      { id: "48239", text: "Third Todo", completed: true, position: 3 },
+      { id: "12098", text: "Second Todo", completed: false, position: 6 },
+      { id: "12378", text: "First Todo", completed: false, position: 2 },
+      { id: "02349", text: "Todo Todo Todo", completed: true, position: 4 },
     ],
   },
 } as Meta<typeof TodoList>;
