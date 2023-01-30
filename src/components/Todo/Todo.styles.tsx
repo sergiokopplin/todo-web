@@ -1,7 +1,9 @@
 import { styled } from "@/styles/stitches";
+import { Pencil1Icon, Cross2Icon } from "@radix-ui/react-icons";
 
 export const StyledWrapper = styled("div", {
   padding: "3px 0",
+  position: "relative",
 
   variants: {
     hovered: {
@@ -50,4 +52,30 @@ export const StyledWrapper = styled("div", {
     theme: "initial",
     hovered: false,
   },
+});
+
+export const StyledPencilIcon = styled(Pencil1Icon, {
+  color: "$colorPrimary",
+
+  "&:hover": {
+    color: "$colorTextBase",
+    cursor: "pointer",
+  },
+});
+
+export const StyledCrossIcon = styled(Cross2Icon, {
+  color: "$colorPrimary",
+
+  "&:hover": {
+    color: "$colorTextBase",
+    cursor: "pointer",
+  },
+});
+
+export const StyledIconWrapper = styled("div", {
+  position: "absolute",
+  top: 0,
+  right: 0,
+  padding: "$2 $2 0",
+  height: "100%",
 });

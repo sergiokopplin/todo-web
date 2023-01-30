@@ -1,7 +1,12 @@
 import { Text } from "@/components";
 import { useState } from "react";
 
-import { StyledWrapper } from "./Todo.styles";
+import {
+  StyledWrapper,
+  StyledIconWrapper,
+  StyledPencilIcon,
+  StyledCrossIcon,
+} from "./Todo.styles";
 
 type Props = {
   children: string;
@@ -35,6 +40,12 @@ export const Todo = ({
       <Text color={getColor()} lineThrough={completed}>
         {children}
       </Text>
+
+      {hovered && (
+        <StyledIconWrapper data-cy="todo-icon-wrapper">
+          {completed ? <StyledCrossIcon /> : <StyledPencilIcon />}
+        </StyledIconWrapper>
+      )}
     </StyledWrapper>
   );
 };

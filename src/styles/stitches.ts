@@ -12,6 +12,7 @@ export const {
 } = createStitches({
   theme: {
     colors: {
+      colorPrimary: "#F41D12",
       colorTextBase: "#000",
       colorTextPrimary: "#F41D12",
       colorTextSecondary: "#C9C9C9",
@@ -19,7 +20,10 @@ export const {
       todoActive: "transparent",
       todoInactive: "#f8f8f8",
     },
-    space: {},
+    space: {
+      1: "2px",
+      2: "4px",
+    },
     fontSizes: {
       fontSizeS: "12px",
       fontSizeM: "14px",
