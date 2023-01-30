@@ -2,9 +2,10 @@ import { styled } from "@/styles/stitches";
 import { Pencil1Icon, Cross2Icon } from "@radix-ui/react-icons";
 
 export const StyledWrapper = styled("div", {
-  padding: "3px 0",
+  padding: "4px 0 2px",
   position: "relative",
-  height: 23,
+  height: 24,
+  top: -2,
 
   variants: {
     hovered: {

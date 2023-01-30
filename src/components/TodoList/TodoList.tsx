@@ -6,6 +6,7 @@ import {
   StyledHeader,
   StyledText,
   StyledItem,
+  StyledList,
 } from "./TodoList.styles";
 
 type Theme = "initial" | "active" | "inactive";
@@ -46,7 +47,7 @@ export const TodoList = ({ title, date, todos, theme = "initial" }: Props) => {
         </StyledText>
       </StyledHeader>
 
-      <ul>
+      <StyledList>
         {sorted.map((todo) => (
           <StyledItem key={todo.id}>
             <Todo
@@ -59,7 +60,7 @@ export const TodoList = ({ title, date, todos, theme = "initial" }: Props) => {
             </Todo>
           </StyledItem>
         ))}
-      </ul>
+      </StyledList>
     </StyledWrapper>
   );
 };

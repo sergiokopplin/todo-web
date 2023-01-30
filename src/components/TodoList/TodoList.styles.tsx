@@ -16,6 +16,18 @@ export const StyledText = styled(Text, {
 });
 
 export const StyledItem = styled("li", {
-  borderBottom: "1px solid rgba(0, 0, 0, 0.08)",
-  padding: "1px 0",
+  padding: "1px 0 2px",
+});
+
+export const StyledList = styled("ol", {
+  height: "400px",
+  backgroundImage:
+    "repeating-linear-gradient(\
+      transparent,\
+      transparent 24px,\
+      rgba(0, 0, 0, 0.08) 24px,\
+      rgba(0, 0, 0, 0.08) 25px,\
+      transparent 25px,\
+      transparent 27px\
+    )",
 });

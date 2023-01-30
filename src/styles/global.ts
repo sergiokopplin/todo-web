@@ -9,7 +9,7 @@ export const globalStyles: CSS = {
     padding: 0,
     boxSizing: "border-box",
   },
-  ul: {
+  "ul, ol": {
     listStyle: "none",
   },
 };
