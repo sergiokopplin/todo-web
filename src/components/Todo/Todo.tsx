@@ -13,12 +13,14 @@ type Props = {
   children: string;
   completed?: boolean;
   theme?: "initial" | "active" | "inactive";
+  handleClick: () => any;
 };
 
 export const Todo = ({
   children,
   completed = false,
   theme = "initial",
+  handleClick,
 }: Props) => {
   const [hovered, setHovered] = useState(false);
   const [edit, setEdit] = useState(false);
@@ -41,9 +43,11 @@ export const Todo = ({
       edit={edit}
     >
       {!edit && (
-        <Text color={getColor()} lineThrough={completed}>
-          {children}
-        </Text>
+        <div onClick={handleClick}>
+          <Text color={getColor()} lineThrough={completed}>
+            {children}
+          </Text>
+        </div>
       )}
 
       {edit && (
