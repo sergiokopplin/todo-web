@@ -6,8 +6,8 @@ export default {
   title: "Components/TodoList",
   component: TodoList,
   args: {
-    title: "QUARTA-FEIRA",
-    date: "24 de Janeiro de 2023",
+    title: new Date(2023, 0, 25),
+    date: new Date(2023, 0, 23),
     todos: [
       { id: "45234", text: "Todo Todo", completed: true, position: 5 },
       { id: "64536", text: "Another One", completed: false, position: 1 },

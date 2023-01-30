@@ -1,3 +1,5 @@
+import { IntlProvider } from "react-intl";
+
 import { resetStyles, globalStyles, globalCss } from "../src/styles";
 
 export const parameters = {
@@ -21,6 +23,10 @@ export const allStyles = globalCss({
 export const decorators = [
   (Story) => {
     allStyles();
-    return <Story />;
+    return (
+      <IntlProvider locale="pt-BR">
+        <Story />
+      </IntlProvider>
+    );
   },
 ];

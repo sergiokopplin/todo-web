@@ -1,7 +1,7 @@
 import { StyledHeading } from "./Heading.styles";
 
 type Props = {
-  children: string;
+  children: any;
   color?: "initial" | "active" | "inactive";
 };
 

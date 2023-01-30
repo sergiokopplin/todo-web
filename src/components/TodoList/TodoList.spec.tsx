@@ -1,6 +1,7 @@
 import { TodoList } from "./TodoList";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
+import { IntlWrapper } from "@/tests";
 import React from "react";
 
 const todosMock = [
@@ -26,17 +27,33 @@ const todosMock = [
 
 describe("TodoList", () => {
   it("renders a Title and Date", async () => {
-    render(<TodoList date="Date Mock" title="Title Mock" todos={[]} />);
+    render(
+      <IntlWrapper>
+        <TodoList
+          date={new Date(2023, 0, 25)}
+          title={new Date(2023, 0, 25)}
+          todos={[]}
+        />
+      </IntlWrapper>
+    );
 
-    const dateResult = await screen.findByText("Date Mock");
-    const titleResult = await screen.findByText("Title Mock");
+    const dateResult = await screen.findByText("25 de janeiro de 2023");
+    const titleResult = await screen.findByText("quarta-feira");
 
     expect(dateResult).toBeTruthy();
     expect(titleResult).toBeTruthy();
   });
 
   it("renders a List", async () => {
-    render(<TodoList date="Date Mock" title="Title Mock" todos={todosMock} />);
+    render(
+      <IntlWrapper>
+        <TodoList
+          date={new Date(2023, 0, 25)}
+          title={new Date(2023, 0, 25)}
+          todos={todosMock}
+        />
+      </IntlWrapper>
+    );
 
     const listResult = await screen.findByRole("list");
     const listNodesResult = await screen.findAllByRole("listitem");
@@ -46,7 +63,15 @@ describe("TodoList", () => {
   });
 
   it("renders a List with order", async () => {
-    render(<TodoList date="Date Mock" title="Title Mock" todos={todosMock} />);
+    render(
+      <IntlWrapper>
+        <TodoList
+          date={new Date(2023, 0, 25)}
+          title={new Date(2023, 0, 25)}
+          todos={todosMock}
+        />
+      </IntlWrapper>
+    );
 
     const listNodesResult = await screen.findAllByRole("listitem");
 

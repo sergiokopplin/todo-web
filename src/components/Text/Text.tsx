@@ -1,7 +1,7 @@
 import { StyledText } from "./Text.styles";
 
 type Props = {
-  children: string;
+  children: any;
   color?: "initial" | "active" | "inactive";
   uppercase?: boolean;
   lineThrough?: boolean;

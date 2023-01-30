@@ -1,4 +1,5 @@
 import { Heading, Todo } from "@/components";
+import { FormattedDate } from "react-intl";
 
 import {
   StyledWrapper,
@@ -11,8 +12,8 @@ type Theme = "initial" | "active" | "inactive";
 
 type Props = {
   theme?: Theme;
-  title: string;
-  date: string;
+  title: Date;
+  date: Date;
   todos: {
     id: string;
     text: string;
@@ -33,9 +34,16 @@ export const TodoList = ({ title, date, todos, theme = "initial" }: Props) => {
   return (
     <StyledWrapper>
       <StyledHeader>
-        <Heading color={theme}>{title}</Heading>
+        <Heading color={theme}>
+          <FormattedDate value={title} weekday="long" />
+        </Heading>
         <StyledText uppercase size="s" color={theme}>
-          {date}
+          <FormattedDate
+            value={date}
+            year="numeric"
+            month="long"
+            day="2-digit"
+          />
         </StyledText>
       </StyledHeader>
 
