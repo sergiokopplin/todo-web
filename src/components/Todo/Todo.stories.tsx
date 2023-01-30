@@ -7,7 +7,8 @@ export default {
   component: Todo,
   args: {
     children: "Todo Text",
-    handleClick: () => console.log("handleClick"),
+    handleDone: () => console.log("handleDone"),
+    handleDelete: () => console.log("handleDelete"),
   },
 } as Meta<typeof Todo>;
 

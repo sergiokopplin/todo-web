@@ -6,7 +6,11 @@ import React from "react";
 describe("Todo", () => {
   it("renders a Text", async () => {
     render(
-      <Todo completed={false} handleClick={() => console.log("handleClick")}>
+      <Todo
+        completed={false}
+        handleDone={() => console.log("handleDone")}
+        handleDelete={() => console.log("handleDelete")}
+      >
         First Todo
       </Todo>
     );

@@ -27,6 +27,9 @@ export const TodoList = ({ title, date, todos, theme = "initial" }: Props) => {
       Number(a.completed) - Number(b.completed) || a.position - b.position
   );
 
+  const handleDelete = () => console.log("handleDelete");
+  const handleDone = () => console.log("handleDone");
+
   return (
     <StyledWrapper>
       <StyledHeader>
@@ -39,7 +42,12 @@ export const TodoList = ({ title, date, todos, theme = "initial" }: Props) => {
       <ul>
         {sorted.map((todo) => (
           <StyledItem key={todo.id}>
-            <Todo completed={todo.completed} theme={theme}>
+            <Todo
+              completed={todo.completed}
+              theme={theme}
+              handleDelete={handleDelete}
+              handleDone={handleDone}
+            >
               {todo.text}
             </Todo>
           </StyledItem>

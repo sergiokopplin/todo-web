@@ -13,14 +13,16 @@ type Props = {
   children: string;
   completed?: boolean;
   theme?: "initial" | "active" | "inactive";
-  handleClick: () => any;
+  handleDone: () => any;
+  handleDelete: () => any;
 };
 
 export const Todo = ({
   children,
   completed = false,
   theme = "initial",
-  handleClick,
+  handleDone,
+  handleDelete,
 }: Props) => {
   const [hovered, setHovered] = useState(false);
   const [edit, setEdit] = useState(false);
@@ -43,7 +45,7 @@ export const Todo = ({
       edit={edit}
     >
       {!edit && (
-        <div onClick={handleClick}>
+        <div onClick={handleDone}>
           <Text color={getColor()} lineThrough={completed}>
             {children}
           </Text>
@@ -67,7 +69,7 @@ export const Todo = ({
       {!edit && hovered && (
         <StyledIconWrapper data-cy="todo-icon-wrapper">
           {completed ? (
-            <StyledCrossIcon />
+            <StyledCrossIcon onClick={() => handleDelete()} />
           ) : (
             <StyledPencilIcon onClick={() => setEdit(true)} />
           )}
