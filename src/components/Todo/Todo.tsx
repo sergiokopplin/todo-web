@@ -1,4 +1,4 @@
-import { Text } from "@/components";
+import { Text, Input } from "@/components";
 import { useState } from "react";
 
 import {
@@ -6,6 +6,7 @@ import {
   StyledIconWrapper,
   StyledPencilIcon,
   StyledCrossIcon,
+  StyledInputWrapper,
 } from "./Todo.styles";
 
 type Props = {
@@ -20,6 +21,7 @@ export const Todo = ({
   theme = "initial",
 }: Props) => {
   const [hovered, setHovered] = useState(false);
+  const [edit, setEdit] = useState(false);
 
   const getColor = () => {
     if (hovered) return "initial";
@@ -36,14 +38,35 @@ export const Todo = ({
       onMouseLeave={() => setHovered(false)}
       hovered={hovered}
       theme={theme}
+      edit={edit}
     >
-      <Text color={getColor()} lineThrough={completed}>
-        {children}
-      </Text>
+      {!edit && (
+        <Text color={getColor()} lineThrough={completed}>
+          {children}
+        </Text>
+      )}
 
-      {hovered && (
+      {edit && (
+        <StyledInputWrapper>
+          <Input
+            name="todo"
+            handleBlur={() => setEdit(false)}
+            handleChange={(value: string) => {
+              console.log("handleChange", value);
+              setEdit(false);
+            }}
+            defaultValue={children}
+          />
+        </StyledInputWrapper>
+      )}
+
+      {!edit && hovered && (
         <StyledIconWrapper data-cy="todo-icon-wrapper">
-          {completed ? <StyledCrossIcon /> : <StyledPencilIcon />}
+          {completed ? (
+            <StyledCrossIcon />
+          ) : (
+            <StyledPencilIcon onClick={() => setEdit(true)} />
+          )}
         </StyledIconWrapper>
       )}
     </StyledWrapper>

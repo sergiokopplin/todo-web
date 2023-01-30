@@ -4,6 +4,7 @@ import { Pencil1Icon, Cross2Icon } from "@radix-ui/react-icons";
 export const StyledWrapper = styled("div", {
   padding: "3px 0",
   position: "relative",
+  height: 23,
 
   variants: {
     hovered: {
@@ -22,12 +23,18 @@ export const StyledWrapper = styled("div", {
         backgroundColor: "$todoActive",
       },
     },
+    edit: {
+      true: {
+        backgroundColor: "$todoActive",
+      },
+    },
   },
 
   compoundVariants: [
     {
       hovered: true,
       theme: "inactive",
+      edit: false,
       css: {
         backgroundColor: "$todoInactive",
       },
@@ -35,6 +42,7 @@ export const StyledWrapper = styled("div", {
     {
       hovered: true,
       theme: "active",
+      edit: false,
       css: {
         backgroundColor: "$todoHover",
       },
@@ -42,6 +50,7 @@ export const StyledWrapper = styled("div", {
     {
       hovered: true,
       theme: "initial",
+      edit: false,
       css: {
         backgroundColor: "$todoHover",
       },
@@ -78,4 +87,9 @@ export const StyledIconWrapper = styled("div", {
   right: 0,
   padding: "$2 $2 0",
   height: "100%",
+});
+
+export const StyledInputWrapper = styled("div", {
+  position: "relative",
+  top: -1,
 });

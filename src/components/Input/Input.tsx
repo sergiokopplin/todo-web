@@ -5,9 +5,15 @@ type Props = {
   name: string;
   handleChange: (value: string) => any;
   handleBlur: () => any;
+  defaultValue: string;
 };
 
-export const Input = ({ name, handleChange, handleBlur }: Props) => {
+export const Input = ({
+  name,
+  handleChange,
+  handleBlur,
+  defaultValue,
+}: Props) => {
   const handleKeyUp = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Escape") {
       handleBlur();
@@ -24,6 +30,8 @@ export const Input = ({ name, handleChange, handleBlur }: Props) => {
       name={name}
       onBlur={handleBlur}
       onKeyUp={handleKeyUp}
+      defaultValue={defaultValue}
+      autoFocus
     />
   );
 };
