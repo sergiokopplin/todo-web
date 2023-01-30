@@ -34,14 +34,14 @@ export const inactive: StoryFn<typeof Todo> = (args) => (
   </Wrapper>
 );
 
-export const completed: StoryFn<typeof Todo> = (args) => (
+export const done: StoryFn<typeof Todo> = (args) => (
   <Wrapper>
-    <Todo {...args} completed />
+    <Todo {...args} done />
   </Wrapper>
 );
 
-export const completedAndInactive: StoryFn<typeof Todo> = (args) => (
+export const doneAndInactive: StoryFn<typeof Todo> = (args) => (
   <Wrapper>
-    <Todo {...args} completed theme="inactive" />
+    <Todo {...args} done theme="inactive" />
   </Wrapper>
 );

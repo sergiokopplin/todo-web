@@ -7,7 +7,7 @@ describe("Todo", () => {
   it("renders a Text", async () => {
     render(
       <Todo
-        completed={false}
+        done={false}
         handleDone={() => console.log("handleDone")}
         handleDelete={() => console.log("handleDelete")}
       >

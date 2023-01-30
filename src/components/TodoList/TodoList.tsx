@@ -17,15 +17,14 @@ type Props = {
   todos: {
     id: string;
     text: string;
-    completed: boolean;
+    done: boolean;
     position: number;
   }[];
 };
 
 export const TodoList = ({ title, date, todos, theme = "initial" }: Props) => {
   const sorted = todos.sort(
-    (a, b) =>
-      Number(a.completed) - Number(b.completed) || a.position - b.position
+    (a, b) => Number(a.done) - Number(b.done) || a.position - b.position
   );
 
   const handleDelete = () => console.log("handleDelete");
@@ -51,7 +50,7 @@ export const TodoList = ({ title, date, todos, theme = "initial" }: Props) => {
         {sorted.map((todo) => (
           <StyledItem key={todo.id}>
             <Todo
-              completed={todo.completed}
+              done={todo.done}
               theme={theme}
               handleDelete={handleDelete}
               handleDone={handleDone}

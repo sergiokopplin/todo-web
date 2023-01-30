@@ -9,12 +9,12 @@ export default {
     title: new Date(2023, 0, 25),
     date: new Date(2023, 0, 23),
     todos: [
-      { id: "45234", text: "Todo Todo", completed: true, position: 5 },
-      { id: "64536", text: "Another One", completed: false, position: 1 },
-      { id: "48239", text: "Third Todo", completed: true, position: 3 },
-      { id: "12098", text: "Second Todo", completed: false, position: 6 },
-      { id: "12378", text: "First Todo", completed: false, position: 2 },
-      { id: "02349", text: "Todo Todo Todo", completed: true, position: 4 },
+      { id: "45234", text: "Todo Todo", done: true, position: 5 },
+      { id: "64536", text: "Another One", done: false, position: 1 },
+      { id: "48239", text: "Third Todo", done: true, position: 3 },
+      { id: "12098", text: "Second Todo", done: false, position: 6 },
+      { id: "12378", text: "First Todo", done: false, position: 2 },
+      { id: "02349", text: "Todo Todo Todo", done: true, position: 4 },
     ],
   },
 } as Meta<typeof TodoList>;

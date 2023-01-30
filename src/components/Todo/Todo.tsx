@@ -11,7 +11,7 @@ import {
 
 type Props = {
   children: string;
-  completed?: boolean;
+  done?: boolean;
   theme?: "initial" | "active" | "inactive";
   handleDone: () => any;
   handleDelete: () => any;
@@ -19,7 +19,7 @@ type Props = {
 
 export const Todo = ({
   children,
-  completed = false,
+  done = false,
   theme = "initial",
   handleDone,
   handleDelete,
@@ -30,7 +30,7 @@ export const Todo = ({
   const getColor = () => {
     if (hovered) return "initial";
 
-    if (completed) return "inactive";
+    if (done) return "inactive";
 
     return theme;
   };
@@ -46,7 +46,7 @@ export const Todo = ({
     >
       {!edit && (
         <div onClick={handleDone}>
-          <Text color={getColor()} lineThrough={completed}>
+          <Text color={getColor()} lineThrough={done}>
             {children}
           </Text>
         </div>
@@ -68,7 +68,7 @@ export const Todo = ({
 
       {!edit && hovered && (
         <StyledIconWrapper data-cy="todo-icon-wrapper">
-          {completed ? (
+          {done ? (
             <StyledCrossIcon onClick={() => handleDelete()} />
           ) : (
             <StyledPencilIcon onClick={() => setEdit(true)} />

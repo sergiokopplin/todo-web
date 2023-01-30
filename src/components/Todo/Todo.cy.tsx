@@ -3,11 +3,16 @@
 import React from "react";
 import { Todo } from "./Todo";
 
+const handlers = {
+  handleDone: () => console.log("handleDone"),
+  handleDelete: () => console.log("handleDelete"),
+};
+
 describe("<Todo />", () => {
   describe("Theme", () => {
     describe("initial", () => {
       it("should changes background on hover and returns on leave", () => {
-        cy.mount(<Todo>Todo Text</Todo>);
+        cy.mount(<Todo {...handlers}>Todo Text</Todo>);
 
         cy.get("[data-cy='todo-wrapper']").trigger("mouseover");
 
@@ -29,7 +34,11 @@ describe("<Todo />", () => {
 
     describe("active", () => {
       it("should changes background on hover and returns on leave", () => {
-        cy.mount(<Todo theme="active">Todo Text</Todo>);
+        cy.mount(
+          <Todo theme="active" {...handlers}>
+            Todo Text
+          </Todo>
+        );
 
         cy.get("[data-cy='todo-wrapper']").trigger("mouseover");
 
@@ -51,7 +60,11 @@ describe("<Todo />", () => {
 
     describe("inactive", () => {
       it("should changes background on hover and returns on leave", () => {
-        cy.mount(<Todo theme="inactive">Todo Text</Todo>);
+        cy.mount(
+          <Todo theme="inactive" {...handlers}>
+            Todo Text
+          </Todo>
+        );
 
         cy.get("[data-cy='todo-wrapper']").trigger("mouseover");
 
@@ -75,7 +88,11 @@ describe("<Todo />", () => {
   describe("Icon", () => {
     describe("when initial or active", () => {
       it("should render icon on hover", () => {
-        cy.mount(<Todo>Todo Text</Todo>);
+        cy.mount(
+          <Todo done {...handlers}>
+            Todo Text
+          </Todo>
+        );
 
         cy.get("[data-cy='todo-icon-wrapper']").should("not.exist");
         cy.get("[data-cy='todo-wrapper']").trigger("mouseover");
@@ -92,7 +109,11 @@ describe("<Todo />", () => {
 
     describe("when inactive", () => {
       it("should render icon on hover", () => {
-        cy.mount(<Todo completed>Todo Text</Todo>);
+        cy.mount(
+          <Todo done {...handlers}>
+            Todo Text
+          </Todo>
+        );
 
         cy.get("[data-cy='todo-icon-wrapper']").should("not.exist");
         cy.get("[data-cy='todo-wrapper']").trigger("mouseover");

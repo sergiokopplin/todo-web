@@ -8,19 +8,19 @@ const todosMock = [
   {
     id: "1234",
     text: "First Todo",
-    completed: true,
+    done: true,
     position: 3,
   },
   {
     id: "4321",
     text: "Third Todo",
-    completed: false,
+    done: false,
     position: 2,
   },
   {
     id: "2432",
     text: "Second Todo",
-    completed: false,
+    done: false,
     position: 1,
   },
 ];
